@@ -2,6 +2,14 @@
   "routes": [
     {
       "method": "GET",
+      "path": "/articles/import",
+      "handler": "article.import",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/articles",
       "handler": "Article.find",
       "config": {

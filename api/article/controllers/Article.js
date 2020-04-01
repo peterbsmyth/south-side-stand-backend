@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Article.js controller
@@ -7,7 +7,6 @@
  */
 
 module.exports = {
-
   /**
    * Retrieve article records.
    *
@@ -28,7 +27,7 @@ module.exports = {
    * @return {Object}
    */
 
-  findOne: async (ctx) => {
+  findOne: async ctx => {
     return strapi.services.article.fetch(ctx.params);
   },
 
@@ -48,7 +47,7 @@ module.exports = {
    * @return {Object}
    */
 
-  create: async (ctx) => {
+  create: async ctx => {
     return strapi.services.article.add(ctx.request.body);
   },
 
@@ -59,7 +58,7 @@ module.exports = {
    */
 
   update: async (ctx, next) => {
-    return strapi.services.article.edit(ctx.params, ctx.request.body) ;
+    return strapi.services.article.edit(ctx.params, ctx.request.body);
   },
 
   /**
@@ -70,5 +69,10 @@ module.exports = {
 
   destroy: async (ctx, next) => {
     return strapi.services.article.remove(ctx.params);
+  },
+
+  /* import routine */
+  import: async ctx => {
+    ctx.send("importing... beep, boop, bop");
   }
 };
